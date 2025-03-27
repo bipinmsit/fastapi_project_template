@@ -1,6 +1,7 @@
 import logging
 import sys
 import os
+
 # from dotenv import load_dotenv
 
 # # Load environment variables for local development
@@ -25,5 +26,3 @@ logger.addHandler(stream_handler)
 # log_level = os.getenv("LOG_LEVEL").upper()
 # numeric_level = getattr(logging,log_level)
 # logger.setLevel(numeric_level)
-
-    

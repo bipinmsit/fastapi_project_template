@@ -28,12 +28,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-#run()
+# run()
 
-# For OCR & Extraction 
+# For OCR & Extraction
 app.include_router(process_pdf.router, prefix="/api")
 
 # User Login
 app.include_router(auth.router)
-
-
