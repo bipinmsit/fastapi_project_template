@@ -1,0 +1,15 @@
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+# from utils.config import env
+# Update DATABASE_URL with your actual database details and SSL certificate path
+# Define your database URL
+DATABASE_URL = "postgresql+asyncpg://username:password@localhost:5432/mydatabase"
+engine = create_engine(DATABASE_URL)
+Session_Local = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+
+def get_db():
+   db = Session_Local()
+   try:
+       yield db
+   finally:
+       db.close()
